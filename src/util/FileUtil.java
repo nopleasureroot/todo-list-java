@@ -1,4 +1,7 @@
-import java.io.File;
+package util;
+
+import model.Task;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class FileUtil {
-    static void writeToFile(Task task) {
+    public static void writeToFile(Task task) {
         // input - ввод - чтение
         // output - вывод - запись
         try (FileOutputStream fos = new FileOutputStream("./tasks.dat", true);
@@ -18,7 +21,7 @@ public class FileUtil {
         }
     }
 
-    static void readFromFile(List<Task> tasks) {
+    public static void readFromFile(List<Task> tasks) {
         try (FileInputStream fileInputStream = new FileInputStream("./tasks.dat")) {
             while (fileInputStream.available() != 0) {
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);

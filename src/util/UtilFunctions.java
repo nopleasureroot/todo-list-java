@@ -1,14 +1,18 @@
+package util;
+
+import model.Task;
+
 import java.util.Scanner;
 
 public class UtilFunctions {
-    static void pressToStart(Scanner scanner) {
+    public static void pressToStart(Scanner scanner) {
         System.out.println("Нажмите любую клавишу, чтобы показать меню");
 
         scanner.nextLine();
         scanner.nextLine();
     }
 
-    static void printMenu() {
+    public static void printMenu() {
         System.out.println("\t\t\tПожалуйста, выберите нужный пункт для начала работы");
         System.out.println("\t\t\t1) Добавить новую задачу");
         System.out.println("\t\t\t2) Вывести все задачи");
@@ -17,7 +21,7 @@ public class UtilFunctions {
         System.out.println("\t\t\t5) Удалить задачу по имени");
     }
 
-    static void printTask(Task task) {
+    public static void printTask(Task task) {
         System.out.println("-----------------------------------------------------------------------");
         System.out.printf("\t\t\tНазвание: %s \n", task.getName());
         System.out.printf("\t\t\tПриоритет: %s \n", task.getPriority());

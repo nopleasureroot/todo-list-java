@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Task {
-    private final String name;
-    private final Integer priority;
-    private final LocalDateTime createdAt;
-    private final LocalDateTime deadline;
-    private final TaskStatus status;
+public class Task implements Serializable {
+    private String name;
+    private Integer priority;
+    private LocalDateTime createdAt;
+    private LocalDateTime deadline;
+    private TaskStatus status;
 
     public Task(String name, Integer priority, LocalDateTime createdAt, LocalDateTime deadline, TaskStatus status) {
         this.name = name;
@@ -34,6 +35,11 @@ public class Task {
 
     public TaskStatus getStatus() {
         return status;
+    }
+
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
     }
 
     @Override
